@@ -52,8 +52,25 @@ namespace GUI_PolyCafe
             string chuSoHuu = txtChuSoHuu.Text.Trim();
             bool trangThai = chkHoatDong.Checked;
 
+            if (string.IsNullOrEmpty(chuSoHuu))
+            {
+                MessageBox.Show("Vui lòng nhập Chủ sở hữu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra trùng mã
+            DataTable dt = bll.GetTableThe();
+            bool maTheDaTonTai = dt.AsEnumerable().Any(row => row["MaThe"].ToString() == maThe);
+            if (maTheDaTonTai)
+            {
+                MessageBox.Show("Mã thẻ đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
             bool kq = bll.ThemThe(maThe, chuSoHuu, trangThai);
-            MessageBox.Show(kq ? "Thêm thẻ thành công" : "Thêm thất bại");
+            MessageBox.Show(kq ? "Thêm thẻ thành công" : "Mã thẻ đã tồn tại");
             LoadData();
         }
 
@@ -63,6 +80,12 @@ namespace GUI_PolyCafe
             string chuSoHuu = txtChuSoHuu.Text.Trim();
             bool trangThai = chkHoatDong.Checked;
 
+            if (string.IsNullOrEmpty(chuSoHuu))
+            {
+                MessageBox.Show("Vui lòng nhập Chủ sở hữu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             bool kq = bll.SuaThe(maThe, chuSoHuu, trangThai);
             MessageBox.Show(kq ? "Sửa thẻ thành công" : "Sửa thất bại");
             LoadData();
@@ -71,7 +94,15 @@ namespace GUI_PolyCafe
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string ma = txtMaThe.Text.Trim();
+            string chuSoHuu = txtChuSoHuu.Text.Trim();
+
             bool kq = bll.XoaThe(ma);
+
+            if (string.IsNullOrEmpty(chuSoHuu))
+            {
+                MessageBox.Show("Vui lòng nhập Chủ sở hữu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             MessageBox.Show(kq ? "Xóa thẻ thành công" : "Xóa thất bại");
             LoadData();
         }

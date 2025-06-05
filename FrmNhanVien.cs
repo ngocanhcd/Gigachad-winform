@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_PolyCafe;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static BLL_PolyCafe.BLL_NhanVien;
 
 namespace GUI_PolyCafe
 {
@@ -24,7 +26,9 @@ namespace GUI_PolyCafe
         }
 
         BLL_NhanVien bll_nhanvien = new BLL_NhanVien();
+
         DataTable table_nhanvien = new DataTable();
+
 
         private void LoadNhanVien()
         {
@@ -86,6 +90,8 @@ namespace GUI_PolyCafe
             string xacNhanMatKhau = textBox5.Text.Trim();
             bool vaiTro = radioButton1.Checked; // true nếu là quản lý, false nếu là nhân viên
 
+
+
             // Kiểm tra dữ liệu
             if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(tenNV) || string.IsNullOrEmpty(email) ||
                 string.IsNullOrEmpty(matKhau) || string.IsNullOrEmpty(xacNhanMatKhau))
@@ -101,17 +107,28 @@ namespace GUI_PolyCafe
             }
 
             BLL_NhanVien bll = new BLL_NhanVien();
-            bool ketQua = bll.ThemNhanVien(maNV, tenNV, email, matKhau, vaiTro);
+            var ketQua = bll.ThemNhanVienV2(maNV, tenNV, email, matKhau, vaiTro);
 
-            if (ketQua)
+            switch (ketQua)
             {
-                MessageBox.Show("Thêm nhân viên thành công!");
-                LoadNhanVien();
+                case ThemNhanVienResult.ThanhCong:
+                    MessageBox.Show("Thêm nhân viên thành công!");
+                    LoadNhanVien();
+                    break;
+
+                case ThemNhanVienResult.MaTrung:
+                    MessageBox.Show("Mã nhân viên đã tồn tại!");
+                    break;
+
+                case ThemNhanVienResult.EmailTrung:
+                    MessageBox.Show("Email đã được sử dụng!");
+                    break;
+
+                default:
+                    MessageBox.Show("Thêm thất bại. Vui lòng thử lại!");
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Thêm thất bại. Mã nhân viên có thể đã tồn tại.");
-            }
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

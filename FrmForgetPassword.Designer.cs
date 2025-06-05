@@ -186,6 +186,7 @@
             this.txtMaKhauMoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaKhauMoi.Location = new System.Drawing.Point(135, 295);
             this.txtMaKhauMoi.Name = "txtMaKhauMoi";
+            this.txtMaKhauMoi.PasswordChar = '*';
             this.txtMaKhauMoi.PlaceholderText = "";
             this.txtMaKhauMoi.SelectedText = "";
             this.txtMaKhauMoi.Size = new System.Drawing.Size(200, 26);
@@ -215,6 +216,7 @@
             this.txtXacNhanMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtXacNhanMatKhau.Location = new System.Drawing.Point(135, 360);
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
+            this.txtXacNhanMatKhau.PasswordChar = '*';
             this.txtXacNhanMatKhau.PlaceholderText = "";
             this.txtXacNhanMatKhau.SelectedText = "";
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(200, 26);

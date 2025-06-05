@@ -85,7 +85,7 @@ namespace GUI_PolyCafe
             }
             else if (nhanvien.TrangThai)
             {
-                MessageBox.Show("Tài khoản đã bị khóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {

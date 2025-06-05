@@ -56,5 +56,17 @@ namespace GUI_PolyCafe
             FrmForgetPassword frmForgetPassword = new FrmForgetPassword();
             frmForgetPassword.ShowDialog();
         }
+
+        private void tKDoanhThuTheoSPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmThongKeSanPham frmThongKeSanPham = new FrmThongKeSanPham();
+            frmThongKeSanPham.ShowDialog();
+        }
+
+        private void tKDoanhThuTheoNVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmThongKeTheoNhanVien frmThongKeTheoNhanVien = new FrmThongKeTheoNhanVien();
+            frmThongKeTheoNhanVien.ShowDialog();
+        }
     }
 }

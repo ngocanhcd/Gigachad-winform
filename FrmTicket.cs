@@ -53,8 +53,8 @@ namespace GUI_PolyCafe
                 dgvThonTinPhieu.Columns["MaPhieu"].HeaderText = "Mã phiếu";
             if (dgvThonTinPhieu.Columns["MaThe"] != null)
                 dgvThonTinPhieu.Columns["MaThe"].HeaderText = "Mã thẻ";
-            if (dgvThonTinPhieu.Columns["MaNV"] != null)
-                dgvThonTinPhieu.Columns["MaNV"].HeaderText = "Nhân viên";
+            if (dgvThonTinPhieu.Columns["MaNhanVien"] != null)
+                dgvThonTinPhieu.Columns["MaNhanVien"].HeaderText = "Nhân viên";
             if (dgvThonTinPhieu.Columns["NgayTao"] != null)
                 dgvThonTinPhieu.Columns["NgayTao"].HeaderText = "Ngày tạo";
             if (dgvThonTinPhieu.Columns["TrangThai"] != null)
@@ -256,6 +256,11 @@ namespace GUI_PolyCafe
         private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
             this.Close(); // Đóng form hiện tại
+        }
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

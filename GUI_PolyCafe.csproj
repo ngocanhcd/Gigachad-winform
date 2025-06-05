@@ -91,6 +91,18 @@
     <Compile Include="FrmTheLuuDong.Designer.cs">
       <DependentUpon>FrmTheLuuDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThongKeSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKeSanPham.Designer.cs">
+      <DependentUpon>FrmThongKeSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThongKeTheoNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKeTheoNhanVien.Designer.cs">
+      <DependentUpon>FrmThongKeTheoNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTheLuuDong.resx">
       <DependentUpon>FrmTheLuuDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKeSanPham.resx">
+      <DependentUpon>FrmThongKeSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKeTheoNhanVien.resx">
+      <DependentUpon>FrmThongKeTheoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTicket.resx">
       <DependentUpon>FrmTicket.cs</DependentUpon>
