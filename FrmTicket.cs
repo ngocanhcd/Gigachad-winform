@@ -16,20 +16,35 @@ namespace GUI_PolyCafe
         BLL_ChiTietPhieu bll = new BLL_ChiTietPhieu();
         BLL_SanPham bllSP = new BLL_SanPham();
         BLL_PhieuBanHang bllPBH = new BLL_PhieuBanHang();
+
+        private string maPhieuHienTai = "";
+        public void NhanMaPhieuTuFormKhac(string maPhieu)
+        {
+            maPhieuHienTai = maPhieu;
+        }
+
         public FrmTicket()
         {
             InitializeComponent();
             Load += FrmTicket_Load;
         }
 
+
+
         private void LoadData()
         {
-            guna2DataGridView2.DataSource = bll.GetTableChiTietPhieu();
+            // Load chi tiết phiếu theo mã hiện tại
+            if (!string.IsNullOrEmpty(maPhieuHienTai))
+            {
+                guna2DataGridView2.DataSource = bll.GetChiTietTheoMaPhieu(maPhieuHienTai);
+            }
+
             dgvThonTinPhieu.DataSource = bllPBH.GetTablePhieu();
 
-            comboBox1.DataSource = bllPBH.GetTablePhieu();
-            comboBox1.DisplayMember = "MaPhieu";
-            comboBox1.ValueMember = "MaPhieu";
+            // Không cần comboBox1 nữa (đã xóa)
+            // comboBox1.DataSource = bllPBH.GetTablePhieu();
+            // comboBox1.DisplayMember = "MaPhieu";
+            // comboBox1.ValueMember = "MaPhieu";
 
             comboBox2.DataSource = bllSP.GetTableSanPham();
             comboBox2.DisplayMember = "TenSanPham";
@@ -48,6 +63,8 @@ namespace GUI_PolyCafe
                 guna2DataGridView2.Columns["SoLuong"].HeaderText = "Số Lượng";
             if (guna2DataGridView2.Columns["DonGia"] != null)
                 guna2DataGridView2.Columns["DonGia"].HeaderText = "Đơn Giá";
+            if (guna2DataGridView2.Columns["ThanhTien"] != null)
+                guna2DataGridView2.Columns["ThanhTien"].HeaderText = "Thành Tiền";
 
             if (dgvThonTinPhieu.Columns["MaPhieu"] != null)
                 dgvThonTinPhieu.Columns["MaPhieu"].HeaderText = "Mã phiếu";
@@ -60,6 +77,7 @@ namespace GUI_PolyCafe
             if (dgvThonTinPhieu.Columns["TrangThai"] != null)
                 dgvThonTinPhieu.Columns["TrangThai"].HeaderText = "Trạng thái";
         }
+
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
@@ -119,7 +137,7 @@ namespace GUI_PolyCafe
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
-            bool kq = bll.ThemChiTiet(comboBox1.Text, comboBox2.SelectedValue.ToString(),
+            bool kq = bll.ThemChiTiet(txtMaPhieu.Text, comboBox2.SelectedValue.ToString(),
                 int.Parse(textBox10.Text), decimal.Parse(textBox11.Text));
             if (kq) MessageBox.Show("Thêm thành công"); else MessageBox.Show("Thất bại");
             LoadData();
@@ -135,7 +153,7 @@ namespace GUI_PolyCafe
             if (guna2DataGridView2.CurrentRow != null)
             {
                 int id = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["Id"].Value);
-                bool kq = bll.SuaChiTiet(id, comboBox1.Text, comboBox2.SelectedValue.ToString(),
+                bool kq = bll.SuaChiTiet(id, txtMaPhieu.Text, comboBox2.SelectedValue.ToString(),
                     int.Parse(textBox10.Text), decimal.Parse(textBox11.Text));
                 if (kq) MessageBox.Show("Sửa thành công"); else MessageBox.Show("Thất bại");
                 LoadData();
@@ -163,10 +181,11 @@ namespace GUI_PolyCafe
             int i = e.RowIndex;
             if (i >= 0)
             {
-                comboBox1.Text = guna2DataGridView2.Rows[i].Cells["MaPhieu"].Value.ToString();
+                txtMaPhieu.Text = guna2DataGridView2.Rows[i].Cells["MaPhieu"].Value.ToString();
                 comboBox2.SelectedValue = guna2DataGridView2.Rows[i].Cells["MaSanPham"].Value.ToString();
                 textBox10.Text = guna2DataGridView2.Rows[i].Cells["SoLuong"].Value.ToString();
                 textBox11.Text = guna2DataGridView2.Rows[i].Cells["DonGia"].Value.ToString();
+                txtThanhTien.Text = guna2DataGridView2.Rows[i].Cells["ThanhTien"].Value.ToString();
             }
         }
 
@@ -245,12 +264,20 @@ namespace GUI_PolyCafe
                 txtMaThe.Text = dgvThonTinPhieu.Rows[i].Cells["MaThe"].Value.ToString();
                 txtMaNV.Text = dgvThonTinPhieu.Rows[i].Cells["MaNhanVien"].Value.ToString();
                 dtpNgayTao.Value = Convert.ToDateTime(dgvThonTinPhieu.Rows[i].Cells["NgayTao"].Value);
+
                 bool daThanhToan = Convert.ToBoolean(dgvThonTinPhieu.Rows[i].Cells["TrangThai"].Value);
                 if (daThanhToan)
                     rdoDaThanhToan.Checked = true;
                 else
                     rdoChoXacNhan.Checked = true;
+
+                // ✅ Gán lại mã phiếu hiện tại để load chi tiết
+                maPhieuHienTai = txtMaPhieu.Text;
+
+                // ✅ Gọi lại LoadData để hiện chi tiết phiếu tương ứng
+                LoadData();
             }
+
         }
 
         private void guna2ControlBox2_Click(object sender, EventArgs e)
@@ -259,6 +286,31 @@ namespace GUI_PolyCafe
         }
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtThanhTien_TextChanged(object sender, EventArgs e)
         {
 
         }

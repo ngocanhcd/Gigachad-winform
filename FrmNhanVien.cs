@@ -225,7 +225,8 @@ namespace GUI_PolyCafe
                 textBox4.Text = row.Cells["MatKhau"].Value?.ToString();
                 textBox5.Text = row.Cells["MatKhau"].Value?.ToString();
                 textBox1.Enabled = false; // Không cho phép sửa mã nhân viên
-                textBox2.Enabled = false; // Cho phép sửa tên nhân viên
+                textBox2.Enabled = true; // Cho phép sửa tên nhân viên
+                textBox3.Enabled = false; // Cho phép sửa email
 
                 bool isQuanLy = false;
                 bool.TryParse(row.Cells["VaiTro"].Value?.ToString(), out isQuanLy);

@@ -30,8 +30,7 @@ namespace GUI_PolyCafe
 
         private void sanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmProduct frmProduct = new FrmProduct();
-            frmProduct.ShowDialog(); // Mở và chặn form cha cho tới khi đóng
+            
         }
 
         private void phieuBanHangToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +66,18 @@ namespace GUI_PolyCafe
         {
             FrmThongKeTheoNhanVien frmThongKeTheoNhanVien = new FrmThongKeTheoNhanVien();
             frmThongKeTheoNhanVien.ShowDialog();
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProduct frmProduct = new FrmProduct();
+            frmProduct.ShowDialog(); // Mở và chặn form cha cho tới khi đóng
+        }
+
+        private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLoaiSanPham frmLoaisanpham = new FrmLoaiSanPham();
+            frmLoaisanpham.ShowDialog(); // Mở và chặn form cha cho tới khi đóng
         }
     }
 }

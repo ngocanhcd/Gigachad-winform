@@ -56,22 +56,22 @@ namespace GUI_PolyCafe
             }
 
             // Tài khoản quản trị đặc biệt
-            if (username == "admin" && password == "123")
-            {
-                NhanVien admin = new NhanVien()
-                {
-                    MaNhanVien = "AD001",
-                    Email = "admin",
-                    MatKhau = "123",
-                    HoTen = "Quản trị viên",
-                    TrangThai = true
-                };
-                AuthUtil.user = admin;
-                this.Hide(); // Ẩn login
-                FrmMenu frmMenu = new FrmMenu();
-                frmMenu.Show(); // Dùng Show thay vì ShowDialog
-                this.Close(); // Đóng luôn login sau khi mở form chính
-            }
+            //if (username == "admin" && password == "123")
+            //{
+            //    NhanVien admin = new NhanVien()
+            //    {
+            //        MaNhanVien = "AD001",
+            //        Email = "admin",
+            //        MatKhau = "123",
+            //        HoTen = "Quản trị viên",
+            //        TrangThai = true
+            //    };
+            //    AuthUtil.user = admin;
+            //    this.Hide(); // Ẩn login
+            //    FrmMenu frmMenu = new FrmMenu();
+            //    frmMenu.Show(); // Dùng Show thay vì ShowDialog
+            //    this.Close(); // Đóng luôn login sau khi mở form chính
+            //}
 
             // Tài khoản người dùng thường
             NhanVien nhanvien = bllNhanVien.SelectByUsername(username);

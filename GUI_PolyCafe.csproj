@@ -61,6 +61,12 @@
     <Compile Include="FrmForgetPassword.Designer.cs">
       <DependentUpon>FrmForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoaiSanPham.Designer.cs">
+      <DependentUpon>FrmLoaiSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmForgetPassword.resx">
       <DependentUpon>FrmForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoaiSanPham.resx">
+      <DependentUpon>FrmLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

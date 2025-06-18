@@ -97,7 +97,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(22, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
@@ -110,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(84, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 25);
@@ -156,13 +156,13 @@
             // chkShowPass
             // 
             this.chkShowPass.AutoSize = true;
-            this.chkShowPass.BackColor = System.Drawing.Color.Transparent;
-            this.chkShowPass.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkShowPass.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chkShowPass.CheckedState.BorderColor = System.Drawing.Color.Black;
             this.chkShowPass.CheckedState.BorderRadius = 0;
             this.chkShowPass.CheckedState.BorderThickness = 0;
-            this.chkShowPass.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkShowPass.CheckMarkColor = System.Drawing.Color.DeepPink;
-            this.chkShowPass.ForeColor = System.Drawing.Color.White;
+            this.chkShowPass.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.chkShowPass.CheckMarkColor = System.Drawing.Color.Red;
+            this.chkShowPass.ForeColor = System.Drawing.Color.Black;
             this.chkShowPass.Location = new System.Drawing.Point(25, 232);
             this.chkShowPass.Name = "chkShowPass";
             this.chkShowPass.Size = new System.Drawing.Size(95, 17);
@@ -223,7 +223,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(22, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
@@ -236,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::GUI_PolyCafe.Properties.Resources.sungjingujpg;
+            this.BackgroundImage = global::GUI_PolyCafe.Properties.Resources.hellokityjpg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(389, 502);
             this.Controls.Add(this.guna2ControlBox1);
