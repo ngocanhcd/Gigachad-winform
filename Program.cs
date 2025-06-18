@@ -17,6 +17,7 @@ namespace GUI_PolyCafe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmWelcome());
+            //hello world
         }
     }
 }
