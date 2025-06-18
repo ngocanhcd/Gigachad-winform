@@ -18,6 +18,7 @@ namespace GUI_PolyCafe
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmWelcome());
             //hello world
+            // This is a simple C# Windows Forms application that starts with a welcome screen.
         }
     }
 }
